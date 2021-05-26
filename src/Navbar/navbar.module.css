@@ -1,0 +1,23 @@
+.navbar{
+    display: flex;
+    background-color: rgb(125, 125, 196);
+    justify-content: left;
+    margin: 1px 1px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.title{
+    padding: 3px 3px;
+    margin: 1px 25px;
+    align-self: flex-start;
+}
+
+#search{
+    margin: 8px;
+    width: 500px;
+    padding: 2px 2px;
+    border: 1px solid black;
+    
+}
+    
