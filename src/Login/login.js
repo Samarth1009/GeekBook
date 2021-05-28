@@ -12,6 +12,7 @@ return(
          <div><input type="password" /></div>
          <div><input type="checkbox" />Remember me</div>
          <button>Sign In</button>
+         Not having an account? &nbsp;<a href="">sign up</a>
      </form>
     </div>
 )

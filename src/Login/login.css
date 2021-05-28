@@ -6,10 +6,11 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 button {
-  background-color: #04AA6D;
+  background-color: #04aa86;
   color: white;
    width: 100%;
   padding: 10px;
@@ -21,14 +22,24 @@ button {
   cursor: pointer;
   
 }
+form{
+  padding: 30px;
+ border-style: outset;
+ background-color: white;
+ border-radius: 10px;
+}
 h1{
     margin-left: 25%;
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
 button:hover {
   opacity: 0.8;
 }
 .container{
 position: absolute;
-top: 30%;
+top: 20%;
 left: 40%;
+}
+body{
+  background-color:rgb(213, 238, 238);
 }
