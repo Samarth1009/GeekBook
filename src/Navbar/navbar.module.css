@@ -1,23 +1,28 @@
-.navbar{
-    display: flex;
-    background-color: rgb(125, 125, 196);
-    justify-content: left;
-    margin: 1px 1px;
-    flex-wrap: wrap;
-    align-items: center;
+.navbar {
+  display: flex;
+  background-color: rgb(125, 125, 196);
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 50px;
 }
 
-.title{
-    padding: 3px 3px;
-    margin: 1px 25px;
-    align-self: flex-start;
+.title {
+  padding: 3px 3px;
+  margin: 1px 25px;
 }
 
-#search{
-    margin: 8px;
-    width: 500px;
-    padding: 2px 2px;
-    border: 1px solid black;
-    
+#search {
+  margin: 0px 8px;
+  width: 500px;
+  padding: 2px 2px;
+  border: 1px solid black;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
 }
-    
+
+.myavatar {
+  margin-right: 10px;
+}
