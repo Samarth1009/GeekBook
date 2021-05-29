@@ -18,7 +18,7 @@ button {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-
+  font-size: medium;
   cursor: pointer;
   
 }
@@ -37,9 +37,44 @@ button:hover {
 }
 .container{
 position: absolute;
-top: 20%;
+top: 10%;
 left: 40%;
 }
 body{
   background-color:rgb(213, 238, 238);
+}
+h6{
+  
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 28px 0 20px; 
+} 
+
+h6 span { 
+    background:#fff; 
+    padding:0 10px; 
+}
+.google{
+  position: static;
+  float: left;
+  display: inline;
+  margin: auto;
+  width:40%;
+  text-align: center;
+ 
+
+}
+.fb{
+  position: static;
+  float: right;
+  display: inline;
+  margin:auto;
+  text-align: center;
+  width:40%;
+  background-color: rgb(33, 94, 134);
+  color: white;
+  font-size: medium;
+  font-weight: bold;
 }
