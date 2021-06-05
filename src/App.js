@@ -2,12 +2,14 @@
 import "./App.css";
 import Navbar from "./Navbar/navbar.js";
 import Login from "./Login/signup.js";
+import Home from "./Home/Home";
 
 function App() {
   return (
-    <div>
-      <Login />
-      {/* <Navbar /> */}
+    <div className="app">
+      {/* <Login /> */}
+      <Navbar />
+      <Home />
     </div>
   );
 }
