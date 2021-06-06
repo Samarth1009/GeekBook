@@ -27,3 +27,6 @@
 .myavatar {
   margin-right: 10px;
 }
+#search:focus{
+  outline: none;
+}

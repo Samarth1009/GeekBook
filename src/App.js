@@ -2,7 +2,7 @@
 import "./App.css";
 import Navbar from "./Navbar/navbar.js";
 // import Login from "./Login/login.js";
-// import Profile from './Profile/profile.js'
+import Profile from './Profile/profile.js'
 import Home from './Home/Home'
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
     <div className='app'>
       {/* <Login /> */}
       <Navbar />
-      <Home />
+      {/* <Home /> */}
+      <Profile />
     </div>
   );
 }
