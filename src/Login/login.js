@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./login.css";
+import styles from "./Login.css";
 import ReactDom from "react-dom";
 import GoogleLogin from "react-google-login";
 // import FacebookLogin from 'react-facebook-login';
@@ -19,7 +19,7 @@ const responseGoogle = (response) => {
 const onSuccess = (response) => console.log(response);
 const onFailure = (response) => console.error(response);
 
-const login = () => {
+const Login = () => {
   return (
     <div className="login">
       <form action="" class="container">
@@ -89,4 +89,4 @@ const login = () => {
     </div>
   );
 };
-export default login;
+export default Login;

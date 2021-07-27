@@ -1,9 +1,9 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
-import './profile.css'
+import './Profile.css'
 
 
-const profile = () => {
+const Profile = () => {
     return (
         <div className='profile_container' >
             <div className='dp_container'>
@@ -32,4 +32,4 @@ const profile = () => {
 
     )
 }
-export default profile
+export default Profile
