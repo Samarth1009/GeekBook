@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import "./App.css";
-import Navbar from "./Navbar/navbar.js";
-import Login from "./Login/login.js";
-import Profile from "./Profile/profile.js";
+import Navbar from "./Navbar/Navbar.js";
+import Login from "./Login/Login.js";
+import Profile from "./Profile/Profile.js";
 import Home from "./Home/Home";
 import Chat from "./Home/Chats/Chat";
 import { useState } from "react";
