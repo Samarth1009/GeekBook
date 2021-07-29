@@ -1,11 +1,12 @@
 .navbar {
   display: flex;
-  background-color: rgb(125, 125, 196);
+  background-color: rgb(54, 94, 121);
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
   height: 50px;
+  color: white;
 }
 
 .title {
@@ -25,4 +26,7 @@
 
 .myavatar {
   margin-right: 10px;
+}
+#search:focus{
+  outline: none;
 }
