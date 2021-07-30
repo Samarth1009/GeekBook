@@ -9,37 +9,39 @@ function Signup() {
     console.log(`username = ${username} password = ${password} ${email}`);
   }, [username, email, password]);
   return (
-    <div ClassName="signup">
-      <form ClassName="signup_container">
+    <div className="signup">
+      <form className="signup_container">
+         <h1 style={{textAlign:"center",marginBottom:"20px"}}>SignUp</h1>
+    
+         <label className="signup_label" for="username">Username</label>
+         <input className="signup_input" type="text" placeholder="Enter Username" name="username" required></input>        
+
+         <label className="signup_label" for="name">Name</label>
+         <input className="signup_input" type="text" placeholder="Enter Name" name="name" required></input> 
+
+         <label className="signup_label" for="email">Email</label>
+         <input className="signup_input" type="text" placeholder="Enter Email" name="email" required></input>
+    
+         <label className="signup_label" for="passsword">Password</label>
+         <input className="signup_input" type="password" placeholder="Enter Password" name="password" required></input>
+
+         <label className="signup_label" for="country">Country</label>
+         <input className="signup_input" type="text" placeholder="Enter Country" name="country" required></input>
+
+         <label className="signup_label" for="state">State</label>
+         <input className="signup_input" type="text" placeholder="Enter State" name="state" required></input>
+
+         <label className="signup_label" for="city">City</label>
+         <input className="signup_input" type="text" placeholder="Enter City" name="city" required></input>
+
+         <label className="signup_label" for="Profession">Profession</label>
+         <input className="signup_input" type="text" placeholder="Enter Profession" name="profession" required></input>
+
+         <label className="signup_label" for="institution">Institution</label>
+         <input className="signup_input" type="text" placeholder="Enter Institution" name="institution" required></input>
          
-         <label for="username">Username</label>
-         <input type="text" placeholder="Enter Username" name="username" required></input>        
-
-         <label for="name">Name</label>
-         <input type="text" placeholder="Enter Name" name="name" required></input> 
-
-         <label for="email">Email</label>
-         <input type="text" placeholder="Enter Email" name="email" required></input>
-    
-         <label for="passsword">Password</label>
-         <input type="password" placeholder="Enter Password" name="password" required></input>
-
-         <label for="country">Country</label>
-         <input type="text" placeholder="Enter Country" name="country" required></input>
-
-         <label for="state">State</label>
-         <input type="text" placeholder="Enter State" name="state" required></input>
-
-         <label for="city">City</label>
-         <input type="text" placeholder="Enter City" name="city" required></input>
-
-         <label for="Profession">Profession</label>
-         <input type="text" placeholder="Enter Profession" name="profession" required></input>
-
-         <label for="institution">Institution</label>
-         <input type="text" placeholder="Enter Institution" name="institution" required></input>
-    
-         <button type="button" ClassName="submit_btn">SUBMIT</button>   
+         <input type="submit" value="Submit" className="signup_btn"/>
+       
       </form>
     </div>
   );

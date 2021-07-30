@@ -17,7 +17,7 @@ function App() {
       {/* <Login/> */}
       {/* <Home /> */}
       {/* <Profile/> */}
-      <Chat
+      {/* <Chat
         show={chat_show}
         handleClose={() => {
           setChat_show(null);
@@ -30,8 +30,8 @@ function App() {
           setChat_show(true);
         }}
       >
-        Chat a Geek
-      </div>
+        Chat a Geek */}
+      {/* </div> */}
     </div>
   );
 }
