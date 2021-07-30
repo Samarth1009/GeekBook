@@ -9,41 +9,37 @@ function Signup() {
     console.log(`username = ${username} password = ${password} ${email}`);
   }, [username, email, password]);
   return (
-    <div>
-      <form action="" class="container">
-        <h1>Signup</h1>
-        Username
-        <div>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => {
-              setUserName(e.target.value);
-            }}
-            size="50"
-          />
-        </div>
-        Email address
-        <div>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-        </div>
-        Password
-        <div>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <button>Sign Up</button>
+    <div ClassName="signup">
+      <form ClassName="signup_container">
+         
+         <label for="username">Username</label>
+         <input type="text" placeholder="Enter Username" name="username" required></input>        
+
+         <label for="name">Name</label>
+         <input type="text" placeholder="Enter Name" name="name" required></input> 
+
+         <label for="email">Email</label>
+         <input type="text" placeholder="Enter Email" name="email" required></input>
+    
+         <label for="passsword">Password</label>
+         <input type="password" placeholder="Enter Password" name="password" required></input>
+
+         <label for="country">Country</label>
+         <input type="text" placeholder="Enter Country" name="country" required></input>
+
+         <label for="state">State</label>
+         <input type="text" placeholder="Enter State" name="state" required></input>
+
+         <label for="city">City</label>
+         <input type="text" placeholder="Enter City" name="city" required></input>
+
+         <label for="Profession">Profession</label>
+         <input type="text" placeholder="Enter Profession" name="profession" required></input>
+
+         <label for="institution">Institution</label>
+         <input type="text" placeholder="Enter Institution" name="institution" required></input>
+    
+         <button type="button" ClassName="submit_btn">SUBMIT</button>   
       </form>
     </div>
   );
