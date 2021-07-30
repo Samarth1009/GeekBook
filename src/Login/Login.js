@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./login.css";
+import styles from "./Login.css";
 import ReactDom from "react-dom";
 import GoogleLogin from "react-google-login";
 // import FacebookLogin from 'react-facebook-login';
@@ -19,28 +19,28 @@ const responseGoogle = (response) => {
 const onSuccess = (response) => console.log(response);
 const onFailure = (response) => console.error(response);
 
-const login = () => {
+const Login = () => {
   return (
     <div className="login">
-      <form action="" class="container">
-        <h1>GeekBook</h1>
+      <form action="" className="container">
+        <h1 style={{textAlign:"center"}}>GeekBook</h1>
         Username
         <div>
-          <input type="text" size="50" />
+          <input className="login_input" type="text" size="50" />
         </div>
         Password
         <div>
-          <input type="password" />
+          <input className="login_input" type="password" />
         </div>
         <div>
           <input type="checkbox" />
           Remember me
         </div>
-        <button>Sign In</button>
+         <input type="submit" value="Login" className="login_btn"/>
         Not having an account? &nbsp;
         <a href="#">sign up</a>
-        <h6>
-          <span>or</span>
+        <h6 className="login_h6">
+          <span id="h6_span">or</span>
         </h6>
         <div className="extra">
           <GoogleLogin
@@ -89,4 +89,4 @@ const login = () => {
     </div>
   );
 };
-export default login;
+export default Login;
