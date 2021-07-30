@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import "./App.css";
 import Navbar from "./Navbar/Navbar.js";
-import Login from "./Login/Login.js";
+// import Login from "./Login/Login.js";
 import Profile from "./Profile/Profile.js";
 import Home from "./Home/Home";
 import Chat from "./Home/Chats/Chat";
@@ -12,8 +12,9 @@ function App() {
   const [chat_show, setChat_show] = useState(null);
   return (
     <div className="app">
-      <Navbar />
+      {/* <Navbar /> */}
       <Signup />
+      {/* <Login/> */}
       {/* <Home /> */}
       {/* <Profile/> */}
       <Chat
