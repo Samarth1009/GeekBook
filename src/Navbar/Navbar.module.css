@@ -30,3 +30,12 @@
 #search:focus{
   outline: none;
 }
+/* .nav_dropdown{
+  position: absolute;
+  top: 25px;
+} */
+.MuiMenu-list{
+  position: absolute;
+  top:1000px;
+}
+

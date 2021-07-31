@@ -20,6 +20,10 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/profile">
+          <Navbar />
+          <Profile />
+        </Route>
         <Route path="/">
           <Navbar />
           <Home />
