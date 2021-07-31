@@ -12,6 +12,7 @@
     "npm": "^7.20.3",
     "prismjs": "^1.23.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-facebook-login": "^4.1.1",
     "react-github-login": "^1.0.3",
