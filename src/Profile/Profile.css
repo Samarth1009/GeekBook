@@ -1,54 +1,54 @@
-.profile_container{
-    background-color: white;
-    height: 100vh;
-    width: 60%;
-    margin: auto;
-    margin-top: 20px;
-    border: 2px outset;
-    border-radius: 5px;
+.profile_container {
+  background-color: white;
+  height: 100%;
+  width: 60%;
+  margin: auto;
+  margin-top: 15px;
+  border: 2px outset;
+  border-radius: 5px;
 }
-.dp_container{
-    display: flex;
-    align-items: center;
+.dp_container {
+  display: flex;
+  align-items: center;
 }
-.dp_container > .MuiAvatar-square{
-    width: 80px;
-    height: 80px;
-    margin-top: 15px ;
-    margin-left: 20px;    
+.dp_container > .MuiAvatar-square {
+  width: 80px;
+  height: 80px;
+  margin-top: 15px;
+  margin-left: 20px;
 }
-.profile_name{
-    margin-top: 45px;
-    margin-left: 5px;
-    font-size: 35px;
-    font-weight: normal;
+.profile_name {
+  margin-top: 45px;
+  margin-left: 5px;
+  font-size: 35px;
+  font-weight: normal;
 }
-.dp_line{
-    background-color: black;
-    height: 0.5px;
-    margin: 10px;
+.dp_line {
+  background-color: black;
+  height: 0.5px;
+  margin: 10px;
 }
-.profile_information_container{
-    display: flex;
-    flex-direction: column;
-    margin: 10px 15px;
+.profile_information_container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 15px;
 }
-.profile_information_item{
-    margin: 10px; 
-    font-weight: bold;   
+.profile_information_item {
+  margin: 10px;
+  font-weight: bold;
 }
-.profile_information_line{
-    margin: 5px 5px;
-    opacity: 0.3;
+.profile_information_line {
+  margin: 5px 5px;
+  opacity: 0.3;
 }
-.profile_skills{
-    margin: 15px;
-    height: 25vh;
-    border: 2px outset gray;
-    border-radius: 5px;
+.profile_skills {
+  margin: 15px;
+  height: 25vh;
+  border: 2px outset gray;
+  border-radius: 5px;
 }
-.profile_skills_heading{
-    font-weight: bold;
-    font-size: 25px;
-    margin: 10px;
+.profile_skills_heading {
+  font-weight: bold;
+  font-size: 25px;
+  margin: 10px;
 }

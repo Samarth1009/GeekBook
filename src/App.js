@@ -1,23 +1,33 @@
 // import logo from './logo.svg';
 import "./App.css";
 import Navbar from "./Navbar/Navbar.js";
-// import Login from "./Login/Login.js";
+import Login from "./Login/Login.js";
 import Profile from "./Profile/Profile.js";
 import Home from "./Home/Home";
 import Chat from "./Home/Chats/Chat";
 import { useState } from "react";
 import Signup from "./Login/Signup.js";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   const [chat_show, setChat_show] = useState(null);
   return (
     <div className="app">
-      {/* <Navbar /> */}
-      <Signup />
-      {/* <Login/> */}
-      {/* <Home /> */}
-      {/* <Profile/> */}
-      {/* <Chat
+      <Switch>
+        <Route path="/signUp">
+          <Signup />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/">
+          <Navbar />
+          <Home />
+        </Route>
+        {/* <Login /> */}
+        {/* <Home /> */}
+        {/* <Profile /> */}
+        {/* <Chat
         show={chat_show}
         handleClose={() => {
           setChat_show(null);
@@ -31,7 +41,8 @@ function App() {
         }}
       >
         Chat a Geek */}
-      {/* </div> */}
+        {/* </div> */}
+      </Switch>
     </div>
   );
 }

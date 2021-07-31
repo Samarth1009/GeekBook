@@ -7,6 +7,7 @@ import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props
 import GitHubLogin from "react-github-login";
 import { LinkedIn } from "react-linkedin-login-oauth2";
 import linkedin from "react-linkedin-login-oauth2/assets/linkedin.png";
+import { Link } from "react-router-dom";
 
 const responseFacebook = (response) => {
   console.log(response);
@@ -23,7 +24,7 @@ const Login = () => {
   return (
     <div className="login">
       <form action="" className="container">
-        <h1 style={{textAlign:"center"}}>GeekBook</h1>
+        <h1 style={{ textAlign: "center" }}>GeekBook</h1>
         Username
         <div>
           <input className="login_input" type="text" size="50" />
@@ -36,9 +37,9 @@ const Login = () => {
           <input type="checkbox" />
           Remember me
         </div>
-         <input type="submit" value="Login" className="login_btn"/>
+        <input type="submit" value="Login" className="login_btn" />
         Not having an account? &nbsp;
-        <a href="#">sign up</a>
+        <Link to="/signUp">sign up</Link>
         <h6 className="login_h6">
           <span id="h6_span">or</span>
         </h6>
