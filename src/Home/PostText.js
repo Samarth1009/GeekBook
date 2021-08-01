@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./PostText.css";
 import { Button } from "@material-ui/core";
 function PostText({ show, handleText, handleClose }) {
@@ -6,6 +6,10 @@ function PostText({ show, handleText, handleClose }) {
     ? "posttext display_block"
     : "posttext display_none";
   const [text, setText] = useState("");
+  const textpostinput = useRef(null);
+  useEffect(() => {
+    textpostinput.current.focus();
+  }, [textpostinput]);
   return (
     <div className={text_modal_style}>
       <div className="text_box">
@@ -13,8 +17,10 @@ function PostText({ show, handleText, handleClose }) {
         <hr />
         <textarea
           cols="100"
+          autoFocus
           rows="15"
           value={text}
+          ref={textpostinput}
           onChange={(e) => {
             setText(e.target.value);
           }}
