@@ -8,12 +8,13 @@
   height: 50px;
   color: white;
 }
-
 .title {
   padding: 3px 3px;
   margin: 1px 25px;
 }
-
+.MuiPaper-root {
+  margin-top: 37px;
+}
 #search {
   margin: 0px 8px;
   width: 500px;
@@ -25,17 +26,12 @@
 }
 
 .myavatar {
-  margin-right: 10px;
+  margin-right: 25px;
 }
-#search:focus{
+#search:focus {
   outline: none;
 }
 /* .nav_dropdown{
   position: absolute;
   top: 25px;
 } */
-.MuiMenu-list{
-  position: absolute;
-  top:1000px;
-}
-
