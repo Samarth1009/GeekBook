@@ -1,9 +1,13 @@
 import { Button, IconButton } from "@material-ui/core";
 import { AddAPhoto, TextFields, Code, Close } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
+import PostText from "./PostText";
 import "./UploadPostModal.css";
 function UploadPostModal({ show, handleClose }) {
   const [modalShow, setModalShow] = useState(show);
+  const [postText, setPostText] = useState(null);
+  const [postCode, setPostCode] = useState(null);
+  const [descrip, setDescrip] = useState("");
   const modal_style = show
     ? "uploadpost display_block"
     : "uploadpost display_none";
@@ -24,7 +28,11 @@ function UploadPostModal({ show, handleClose }) {
             <IconButton>
               <Code />
             </IconButton>
-            <IconButton>
+            <IconButton
+              onClick={() => {
+                setPostText(true);
+              }}
+            >
               <TextFields />
             </IconButton>
           </div>
@@ -39,6 +47,15 @@ function UploadPostModal({ show, handleClose }) {
       <div className="close_post" onClick={handleClose}>
         <Close />
       </div>
+      <PostText
+        show={postText}
+        handleClose={() => {
+          setPostText(null);
+        }}
+        handleText={(text) => {
+          setDescrip(text);
+        }}
+      />
     </div>
   );
 }
