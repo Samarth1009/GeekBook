@@ -4,6 +4,9 @@ import { useState } from "react";
 import "./navbar.css";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { Button, Menu, MenuItem } from "@material-ui/core";
+import home from './home.png';
+import user from './user.png';
+import logout from './logout.png';
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -14,6 +17,10 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  function menuToggle(){
+    const toggleMenu=document.querySelector('.nav_dropdown_content');
+    toggleMenu.classList.toggle('active');
+  }
   return (
     <nav className="navbar">
 
@@ -22,12 +29,12 @@ const Navbar = () => {
       <input type="text" name="search" id="search" placeholder="Search"></input>
 
       <div className="nav_dropdown">
-          <Avatar className="myavatar"></Avatar>
+          <Avatar  onClick={menuToggle} className="myavatar"></Avatar>
 
         <ul className="nav_dropdown_content">
-          <li>Home</li>
-          <li>Profile</li>
-          <li>Logout</li>
+          <li><img src={home} />Home</li>
+          <li><img src={user} />Profile</li>
+          <li><img src={logout} />Logout</li>
         </ul>
       </div>
       
