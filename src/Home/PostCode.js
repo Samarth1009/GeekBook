@@ -1,27 +1,33 @@
 import { Button } from "@material-ui/core";
 import React, { useState } from "react";
 import "./PostCode.css";
+import Select from "react-select";
 function PostCode({ show, handleCode, handleLang, handleClose }) {
   const code_modal_style = show
     ? "postcode display_block"
     : "postcode display_none";
   const [code, setCode] = useState("");
   const [lang, setLang] = useState("");
+  const options = [
+    { value: "language-clike", label: "C/C++" },
+    { value: "language-py", label: "Python" },
+    { value: "java", label: "Java" },
+    { value: "js", label: "Java Script" },
+    { value: "c-sharp", label: "C#" },
+    { value: "go", label: "Go" },
+    { value: "PHP", label: "PHP" },
+  ];
   return (
     <div className={code_modal_style}>
-      <div className="text_box">
+      <div className="code_box">
         <h3>Code</h3>
-        <hr />
-        <select
+        <Select
           value={lang}
+          options={options}
           onChange={(e) => {
-            setLang(e.target.value);
+            setLang(e);
           }}
-        >
-          <option value="c-type">C/C++</option>
-          <option value="py">Python</option>
-          <option value="java">Java</option>
-        </select>
+        />
         <textarea
           cols="100"
           autoFocus
@@ -37,6 +43,7 @@ function PostCode({ show, handleCode, handleLang, handleClose }) {
             variant="contained"
             onClick={() => {
               setCode("");
+              setLang(null);
               handleClose();
             }}
           >
@@ -45,9 +52,10 @@ function PostCode({ show, handleCode, handleLang, handleClose }) {
           <Button
             variant="contained"
             onClick={() => {
+              handleCode(code);
+              handleLang(lang);
               setCode("");
-              handleCode();
-              handleLang();
+              setLang(null);
               handleClose();
             }}
           >

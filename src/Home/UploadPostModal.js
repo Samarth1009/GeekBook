@@ -4,6 +4,10 @@ import React, { useEffect, useState } from "react";
 import PostText from "./PostText";
 import PostCode from "./PostCode";
 import "./UploadPostModal.css";
+import Prism from "prismjs";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-clike";
+// import "../colddark.css";
 function UploadPostModal({ show, handleClose }) {
   const [modalShow, setModalShow] = useState(show);
   const [postText, setPostText] = useState(null);
@@ -15,15 +19,29 @@ function UploadPostModal({ show, handleClose }) {
   const modal_style = show
     ? "uploadpost display_block"
     : "uploadpost display_none";
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [code]);
+  useEffect(() => {
+    console.log("code:" + code);
+    lang && console.log("lang:" + lang.label);
+  }, [code, lang]);
+  useEffect(() => {
+    console.log("Description: " + descrip);
+  }, [descrip]);
   return (
     <div className={modal_style}>
       <div className="modal">
         <h3>Post</h3>
         <hr />
-        <div className="disc_post">
-          <div className="preview_post"></div>
+        <div className="post_middle">
+          <p className="descrip_text">{descrip}</p>
+          {lang && (
+            <pre>
+              <code className={lang.value}>{code}</code>
+            </pre>
+          )}
         </div>
-        <div className="post_middle"></div>
         <div className="post_bottom">
           <div className="attachments">
             <IconButton>

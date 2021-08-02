@@ -14,6 +14,8 @@
   left: 30%;
   border-radius: 8px;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 .code_submit > .MuiButton-root {
   background-color: rgb(54, 94, 121);
@@ -22,15 +24,26 @@
   display: flex;
   justify-content: flex-end;
 }
+.lang_select {
+  padding: 5px;
+  cursor: pointer;
+  outline: none;
+  margin: 7px 0px;
+  background-color: rgb(54, 94, 121);
+  color: white;
+}
 .code_submit {
   display: flex;
   width: 100%;
   justify-content: flex-end;
 }
 .code_box > textarea {
-  border: none;
+  border: 1px solid grey;
+  font-size: 15px;
   outline: none;
-  margin: 10px;
+  border-radius: 4px;
+  margin: 4px;
+  padding: 5px;
 }
 .display_none {
   display: none;

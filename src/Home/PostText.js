@@ -6,10 +6,6 @@ function PostText({ show, handleText, handleClose }) {
     ? "posttext display_block"
     : "posttext display_none";
   const [text, setText] = useState("");
-  const textpostinput = useRef(null);
-  useEffect(() => {
-    textpostinput.current.focus();
-  }, [textpostinput]);
   return (
     <div className={text_modal_style}>
       <div className="text_box">
@@ -20,7 +16,6 @@ function PostText({ show, handleText, handleClose }) {
           autoFocus
           rows="15"
           value={text}
-          ref={textpostinput}
           onChange={(e) => {
             setText(e.target.value);
           }}
@@ -39,8 +34,8 @@ function PostText({ show, handleText, handleClose }) {
           <Button
             variant="contained"
             onClick={() => {
+              handleText(text);
               setText("");
-              handleText();
               handleClose();
             }}
           >
