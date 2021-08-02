@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./PostText.css";
 import { Button } from "@material-ui/core";
 function PostText({ show, handleText, handleClose }) {
@@ -13,6 +13,7 @@ function PostText({ show, handleText, handleClose }) {
         <hr />
         <textarea
           cols="100"
+          autoFocus
           rows="15"
           value={text}
           onChange={(e) => {
@@ -33,8 +34,8 @@ function PostText({ show, handleText, handleClose }) {
           <Button
             variant="contained"
             onClick={() => {
+              handleText(text);
               setText("");
-              handleText();
               handleClose();
             }}
           >

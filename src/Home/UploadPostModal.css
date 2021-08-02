@@ -18,8 +18,13 @@
   display: flex;
   flex-direction: column;
 }
-.preview_post {
+.post_middle {
   height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+.descrip_text {
+  word-break: break-all;
 }
 .post_bottom {
   display: flex;
