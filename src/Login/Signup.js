@@ -49,6 +49,7 @@ function Signup() {
           setSuccess(true);
         })
         .catch((error) => {
+          {alert("Signup Failed")}
           console.log(error.toJSON());
         });
     } catch (error) {
