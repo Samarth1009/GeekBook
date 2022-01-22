@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./Navbar/Navbar.js";
 import Login from "./Login/Login.js";
 import Profile from "./Profile/Profile.js";
+import EditProfile from "./Profile/EditProfile.js";
 import Home from "./Home/Home";
 import Chat from "./Home/Chats/Chat";
 import { useState } from "react";
@@ -21,13 +22,15 @@ function App() {
           <Navbar />
           <Profile />
         </Route>
-        <Route path="/Home">
+        <Route path="/editprofile">
+          <Navbar />
+          <EditProfile />
+        </Route>
+        <Route path="/">
           <Navbar />
           <Home />
         </Route>
-        <Route path="/">
-          <Login />
-        </Route>
+        
         {/* <Login /> */}
         {/* <Home /> */}
         {/* <Profile /> */}
