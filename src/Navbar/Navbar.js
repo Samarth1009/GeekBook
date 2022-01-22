@@ -31,6 +31,10 @@ const Navbar = () => {
             <Link to="/profile">Profile</Link>
           </li>
           <li>
+            <img src={user} />
+            <Link to="/editprofile">Edit Profile</Link>
+          </li>
+          <li>
             <img src={logout} />
             <Link to="/Login">Logout</Link>
           </li>
