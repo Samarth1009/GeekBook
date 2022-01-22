@@ -6,29 +6,54 @@ import PostCode from "./PostCode";
 import "./UploadPostModal.css";
 import Prism from "prismjs";
 import "prismjs/components/prism-python";
-import "prismjs/components/prism-clike";
-// import "../colddark.css";
+// import "prismjs/components/prism-clike";
+import "prismjs/components/";
+import axios from "axios";
+// import { useStateValue } from "../State/StateProvider";
+
 function UploadPostModal({ show, handleClose }) {
-  const [modalShow, setModalShow] = useState(show);
+  // const [{ user }, dispatch] = useStateValue();
   const [postText, setPostText] = useState(null);
-  const [postCode, setPostCode] = useState(null);
-  const [descrip, setDescrip] = useState("");
   const [codeShow, setCodeShow] = useState(null);
+
+  //descrip, code and lang are used for the final respective values
+  const [descrip, setDescrip] = useState("");
   const [code, setCode] = useState(null);
   const [lang, setLang] = useState(null);
+
   const modal_style = show
     ? "uploadpost display_block"
     : "uploadpost display_none";
+
+  // useEffect(() => {
+  //   console.log(user);
+  // }, []);
   useEffect(() => {
     Prism.highlightAll();
   }, [code]);
-  useEffect(() => {
-    console.log("code:" + code);
-    lang && console.log("lang:" + lang.label);
-  }, [code, lang]);
-  useEffect(() => {
-    console.log("Description: " + descrip);
-  }, [descrip]);
+
+  const uploadpost = () => {
+    const user = localStorage.getItem("user");
+    console.log(user);
+    if (descrip || code) {
+      const data = {
+        username: user,
+        language: lang.value,
+        description: descrip,
+        code: code,
+      };
+      axios
+        .post("http://localhost:8000/post", data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("invalid field values");
+    }
+  };
   return (
     <div className={modal_style}>
       <div className="modal">
@@ -63,10 +88,29 @@ function UploadPostModal({ show, handleClose }) {
             </IconButton>
           </div>
           <div className="post_submit">
-            <Button variant="contained" onClick={handleClose}>
+            <Button
+              variant="contained"
+              onClick={() => {
+                setDescrip(null);
+                setCode(null);
+                setLang(null);
+                handleClose();
+              }}
+            >
               Cancel
             </Button>
-            <Button variant="contained">Post</Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                uploadpost();
+                setDescrip(null);
+                setCode(null);
+                setLang(null);
+                handleClose();
+              }}
+            >
+              Post
+            </Button>
           </div>
         </div>
       </div>

@@ -1,11 +1,26 @@
 import { Button } from "@material-ui/core";
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Posts from "./Posts";
 import Sidebar from "./Sidebar";
 import UploadPostModal from "./UploadPostModal";
 function Home() {
   const [post_show, setPost_show] = useState(null);
+  const [postAll, setPostAll] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/fetchAllPost")
+      .then((res) => {
+        setPostAll(res.data);
+      })
+      .catch((error) => {
+        console.log("ERROR OCCCURRED");
+      });
+  }, []);
+  // useEffect(() => {
+  //   console.log(postAll);
+  // }, [postAll]);
   return (
     <div className="home">
       <div className="feeds">
@@ -21,7 +36,14 @@ function Home() {
           </Button>
         </div>
         <h3 className="latest_posts">Latest Posts</h3>
-        <Posts />
+        {postAll.map((post) => (
+          <Posts
+            lang={post.language}
+            descrip={post.description}
+            code={post.code}
+            username={post.username}
+          />
+        ))}
       </div>
       <Sidebar />
       <UploadPostModal

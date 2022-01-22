@@ -8,7 +8,7 @@ import Home from "./Home/Home";
 import Chat from "./Home/Chats/Chat";
 import { useState } from "react";
 import Signup from "./Login/Signup.js";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
   const [chat_show, setChat_show] = useState(null);
@@ -17,9 +17,6 @@ function App() {
       <Switch>
         <Route path="/signUp">
           <Signup />
-        </Route>
-        <Route path="/login">
-          <Login />
         </Route>
         <Route path="/profile">
           <Navbar />

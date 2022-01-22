@@ -1,6 +1,7 @@
 import { Button } from "@material-ui/core";
 import React, { useState } from "react";
 import "./PostCode.css";
+import "prismjs/components/";
 import Select from "react-select";
 function PostCode({ show, handleCode, handleLang, handleClose }) {
   const code_modal_style = show
@@ -11,11 +12,11 @@ function PostCode({ show, handleCode, handleLang, handleClose }) {
   const options = [
     { value: "language-clike", label: "C/C++" },
     { value: "language-py", label: "Python" },
-    { value: "java", label: "Java" },
-    { value: "js", label: "Java Script" },
-    { value: "c-sharp", label: "C#" },
-    { value: "go", label: "Go" },
-    { value: "PHP", label: "PHP" },
+    { value: "language-java", label: "Java" },
+    { value: "language-js", label: "Java Script" },
+    { value: "language-c-sharp", label: "C#" },
+    { value: "language-go", label: "Go" },
+    { value: "language-PHP", label: "PHP" },
   ];
   return (
     <div className={code_modal_style}>

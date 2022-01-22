@@ -8,23 +8,44 @@ import {
   ThumbDown,
   ThumbUp,
 } from "@material-ui/icons";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-python";
-import "prismjs/components/prism-clike";
+// import "prismjs/components/prism-clike";
+import "prismjs/components/";
 import "../prism.css";
 import "./Posts.css";
-function Posts() {
+import axios from "axios";
+// import { useStateValue } from "../State/StateProvider";
+function Posts({ lang, code, descrip, username }) {
+  const [info, setInfo] = useState({});
   useEffect(() => {
     Prism.highlightAll();
   }, []);
+  useEffect(() => {
+    const req1 = {
+      username: username,
+    };
+    console.log(username);
+    axios
+      .post("http://localhost:8000/getUser", req1)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((error) => {
+        console.log("ERROR OCCCURRED");
+      });
+  }, []);
+  // useEffect(() => {
+  //   console.log(info);
+  // }, [info]);
   return (
     <div className="posts">
       <div className="posts_top">
-        <Avatar />
+        <Avatar src={info.pic} />
         <div className="posts_info">
-          <h3 className="posts_name">Noob dev</h3>
-          <p>undergrate at IIITP</p>
+          <h3 className="posts_name">{info.name}</h3>
+          <p>{info.institution}</p>
         </div>
         <IconButton>
           <Share />
@@ -36,67 +57,12 @@ function Posts() {
           <MoreVert />
         </IconButton>
       </div>
-      <p className="posts_desc">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo ex tempore
-        eum facere magni et, fugiat officiis numquam debitis quia veritatis,
-        expedita magnam velit. Natus, nesciunt veritatis provident commodi ab
-        reiciendis dignissimos error earum nihil placeat consequatur recusandae
-        voluptatem eum laborum sint porro quaerat iusto? Minus id temporibus
-        molestiae ex?
-      </p>
+      <p className="posts_desc">{descrip}</p>
       <div className="code">
         <pre className="custom_prism">
-          <code className="language-py">
-            {`
-            # Python program to check if year is a leap year or not
-
-year = 2000
-
-# To get year (integer input) from the user
-# year = int(input("Enter a year: "))
-
-if (year % 4) == 0:
-   if (year % 100) == 0:
-       if (year % 400) == 0:
-           print("{0} is a leap year".format(year))
-       else:
-           print("{0} is not a leap year".format(year))
-   else:
-       print("{0} is a leap year".format(year))
-else:
-   print("{0} is not a leap year".format(year))
-  `}
-          </code>
+          <code className={lang}>{code}</code>
           <div className="posts_language">
-            <h4>python</h4>
-          </div>
-        </pre>
-        <pre className="custom_prism">
-          <code className="language-clike">
-            {`
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    int a = 5, b = 10, temp;
-
-    cout << "Before swapping." << endl;
-    cout << "a = " << a << ", b = " << b << endl;
-
-    temp = a;
-    a = b;
-    b = temp;
-
-    cout << "\nAfter swapping." << endl;
-    cout << "a = " << a << ", b = " << b << endl;
-
-    return 0;
-}
-  `}
-          </code>
-          <div className="posts_language">
-            <h4>c++</h4>
+            <h4>{lang}</h4>
           </div>
         </pre>
       </div>
