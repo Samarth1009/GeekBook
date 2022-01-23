@@ -3,6 +3,7 @@ import React from "react";
 import "./Profile.css";
 
 const Profile = () => {
+  const username = localStorage.getItem("userk");
   return (
     <div className="profile_container">
       <div className="dp_container">

@@ -15,6 +15,9 @@ function Signup() {
   const [institution, setInstitution] = useState(null);
 
   const [success, setSuccess] = useState(false);
+  // useEffect(() => {
+  //   localStorage.clear();
+  // }, []);
   useEffect(() => {
     console.log(
       `${username} ${name} ${email} ${password} ${country} ${state} ${city} ${profession} ${institution}`
@@ -49,7 +52,9 @@ function Signup() {
           setSuccess(true);
         })
         .catch((error) => {
-          {alert("Signup Failed")}
+          {
+            alert("Signup Failed");
+          }
           console.log(error.toJSON());
         });
     } catch (error) {

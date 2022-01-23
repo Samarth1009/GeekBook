@@ -18,6 +18,10 @@ function App() {
         <Route path="/signUp">
           <Signup />
         </Route>
+        <Route path="/Home">
+          <Navbar />
+          <Home />
+        </Route>
         <Route path="/profile">
           <Navbar />
           <Profile />
@@ -27,10 +31,9 @@ function App() {
           <EditProfile />
         </Route>
         <Route path="/">
-          <Navbar />
-          <Home />
+          <Login />
         </Route>
-        
+
         {/* <Login /> */}
         {/* <Home /> */}
         {/* <Profile /> */}

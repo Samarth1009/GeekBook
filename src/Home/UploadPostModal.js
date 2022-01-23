@@ -31,13 +31,12 @@ function UploadPostModal({ show, handleClose }) {
   useEffect(() => {
     Prism.highlightAll();
   }, [code]);
-
   const uploadpost = () => {
-    const user = localStorage.getItem("user");
-    console.log(user);
+    const userk = localStorage.getItem("userk");
+    console.log(userk);
     if (descrip || code) {
       const data = {
-        username: user,
+        username: userk,
         language: lang.value,
         description: descrip,
         code: code,
