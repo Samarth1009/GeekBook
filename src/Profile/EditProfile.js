@@ -19,8 +19,10 @@ function EditProfile() {
   const [success, setSuccess] = useState(false);
 
   const updatedata = (e) => {
+    const userk = localStorage.getItem("userk");
+    console.log(userk);
     const data = {
-      username: "sami123",
+      username: userk,
       name: name,
       email: email,
       password: password,
@@ -52,7 +54,11 @@ function EditProfile() {
 
   const postDetails = (pics) => {
     setPicMessage(null);
-    if (pics.type === "image/jpeg" || (pics.type === "image/jpg" || pics.type === "image/png")) {
+    if (
+      pics.type === "image/jpeg" ||
+      pics.type === "image/jpg" ||
+      pics.type === "image/png"
+    ) {
       const data = new FormData();
       data.append("file", pics);
       data.append("upload_preset", "geekbook");
@@ -70,7 +76,9 @@ function EditProfile() {
           console.log(err);
         });
     } else {
-      {alert("Error in uploading image")};
+      {
+        alert("Error in uploading image");
+      }
     }
   };
 
@@ -87,7 +95,7 @@ function EditProfile() {
         </h1>
         {/* <div className="profile_pic"> */}
         <img src={pic} className="profilePic" />
-        
+
         <label className="updateuser_label" for="image">
           Upload Image
         </label>
@@ -96,7 +104,6 @@ function EditProfile() {
           type="file"
           id="image"
           name="image"
-          
           onChange={(e) => postDetails(e.target.files[0])}
         />
 

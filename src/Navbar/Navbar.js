@@ -4,9 +4,12 @@ import "./navbar.css";
 import home from "./home.png";
 import user from "./user.png";
 import logout from "./logout.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [log, setLog] = useState(false);
+
   function menuToggle() {
     const toggleMenu = document.querySelector(".nav_dropdown_content");
     toggleMenu.classList.toggle("active");
@@ -35,8 +38,17 @@ const Navbar = () => {
             <Link to="/editprofile">Edit Profile</Link>
           </li>
           <li>
+            {/* <Link to="/Login">Logout</Link> */}
             <img src={logout} />
-            <Link to="/Login">Logout</Link>
+            <a
+              onClick={() => {
+                setLog(true);
+                localStorage.clear();
+              }}
+            >
+              Logout
+            </a>
+            {log && <Redirect to="/login" />}
           </li>
         </ul>
       </div>

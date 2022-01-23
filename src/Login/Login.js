@@ -22,7 +22,7 @@ const Login = () => {
         .post("http://localhost:8000/signin", data)
         .then((response) => {
           dispatch({ type: actions.SET_USER, user: data.username });
-          localStorage.setItem("user", data.username);
+          localStorage.setItem("userk", data.username);
           setSuccess(true);
         })
         .catch((error) => {
@@ -69,7 +69,7 @@ const Login = () => {
           Remember me
         </div>
         <input type="submit" value="Login" className="login_btn" />
-        {success && <Redirect to="/Home" />}
+        {localStorage.getItem("userk") && <Redirect to="/Home" />}
         Not having an account? &nbsp;
         <Link to="/signUp">sign up</Link>
       </form>

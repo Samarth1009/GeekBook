@@ -26,7 +26,6 @@ function Posts({ lang, code, descrip, username }) {
     const req1 = {
       username: username,
     };
-    console.log(username);
     axios
       .post("http://localhost:8000/getUser", req1)
       .then((res) => {
