@@ -6,6 +6,7 @@ import Profile from "./Profile/Profile.js";
 import EditProfile from "./Profile/EditProfile.js";
 import Home from "./Home/Home";
 import Chat from "./Home/Chats/Chat";
+import Messenger from "./Messenger/Messenger.js";
 import { useState } from "react";
 import Signup from "./Login/Signup.js";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -15,6 +16,9 @@ function App() {
   return (
     <div className="app">
       <Switch>
+        <Route path="/messenger">
+          <Messenger />
+        </Route>
         <Route path="/signUp">
           <Signup />
         </Route>

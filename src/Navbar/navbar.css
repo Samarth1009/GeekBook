@@ -21,11 +21,11 @@
 #search {
   margin: 0px 8px;
   width: 500px;
-  padding: 2px 2px;
+  padding: 2px 25px;
   border: 1px solid black;
-  height: 38px;
+  height: 30px;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .myavatar {
