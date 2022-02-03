@@ -13,7 +13,7 @@ const Profile = () => {
   const [profession, setProfession] = useState(null);
   const [institution, setInstitution] = useState(null);
   const [pic, setPic] = useState(null);
-
+ 
   useEffect(() => {
     const data = {
       username: username,
@@ -30,6 +30,7 @@ const Profile = () => {
           setProfession(response.data.profession);
           setInstitution(response.data.institution);
           setPic(response.data.pic);
+        
         })
         .catch((error) => {
           {
@@ -51,47 +52,47 @@ const Profile = () => {
       </div>
       <hr className="dp_line" />
       <div className="profile_information_container">
-        <div>
+        <div className="profile_item">
           <span className="profile_information_item">Username :</span>
           <span className="values">{username}</span>
         </div>
         <hr className="profile_information_line"></hr>
-        <div>
+        <div className="profile_item">
         <span className="profile_information_item">
           Email : 
           </span><span className="values">{email}</span>
         
         </div>
         <hr className="profile_information_line"></hr>
-        <div>
+        <div className="profile_item">
         <span className="profile_information_item">
           Country : </span>
           <span className="values">{country}</span>
         
         </div>
         <hr className="profile_information_line"></hr>
-        <div>
+        <div className="profile_item">
         <span className="profile_information_item">
           State : </span>
           <span className="values">{state}</span>
        
         </div>
         <hr className="profile_information_line"></hr>
-        <div>
+        <div className="profile_item">
         <span className="profile_information_item">
           City : </span>
           <span className="values">{city}</span>
         
         </div>
         <hr className="profile_information_line"></hr>
-        <div>
+        <div className="profile_item">
         <span className="profile_information_item">
           Profession : </span>
           <span className="values">{profession}</span>
         
         </div>
         <hr className="profile_information_line"></hr>
-        <div>
+        <div className="profile_item">
         <span className="profile_information_item">
           Institution : </span>
           <span className="values">{institution}</span>

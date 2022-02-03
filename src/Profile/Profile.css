@@ -37,12 +37,16 @@
   margin: 10px;
 }
 .profile_information_container {
-  display: flex;
+
   flex-direction: column;
   margin: 10px 15px;
   height: 150%;
 }
+.profile_item{
+  display: flex;
+}
 .profile_information_item {
+  flex: 10%;
   margin: 10px;
   font-weight: bold;
 }
@@ -51,6 +55,7 @@
   opacity: 0.3;
 }
 .values{
+  flex: 80%;
   margin: 10px;
   font-weight: bold;
 }

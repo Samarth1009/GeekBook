@@ -38,6 +38,9 @@ const Navbar = () => {
             <Link to="/editprofile">Edit Profile</Link>
           </li>
           <li>
+            <Link to= "/messenger">Message</Link>
+          </li>
+          <li>
             {/* <Link to="/Login">Logout</Link> */}
             <img src={logout} />
             <a
