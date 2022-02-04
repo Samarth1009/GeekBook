@@ -22,6 +22,7 @@ const Profile = () => {
       axios
         .post("http://localhost:8000/getUser", data)
         .then((response) => {
+          console.log(response.data);
           setName(response.data.name);
           setEmail(response.data.email);
           setCountry(response.data.country);
@@ -30,7 +31,7 @@ const Profile = () => {
           setProfession(response.data.profession);
           setInstitution(response.data.institution);
           setPic(response.data.pic);
-        
+           
         })
         .catch((error) => {
           {
