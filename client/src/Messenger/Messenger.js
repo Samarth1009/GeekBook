@@ -9,6 +9,7 @@ import { useState, useEffect, useRef } from "react";
 import { io } from "socket.io-client";
 
 var x;
+
 const Messenger = () => {
   const username = localStorage.getItem("userk");
 
@@ -17,9 +18,12 @@ const Messenger = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
+  const [onlineUsers, setOnlineUsers] = useState([]);
+  const[user,setUser] =useState([]);
   const socket = useRef();
   const scrollRef = useRef();
 
+ 
   useEffect(() => {
      socket.current = io("ws://localhost:8900");
       socket.current.on("getMessage", (data) => {
@@ -42,9 +46,12 @@ const Messenger = () => {
    useEffect(() => {
      socket.current.emit("addUser", x);
      socket.current.on("getUsers", (users) => {
-       console.log(users);
+       var array=users.map(x=> x.userId
+       ).filter(e=> e && e!==user._id);
+      //  console.log(array);
+       setOnlineUsers(array);
      })
-   }, [x]);
+   }, [user]);
 
 
   useEffect(() => {
@@ -56,6 +63,8 @@ const Messenger = () => {
         await axios
           .post("http://localhost:8000/getUser", data)
           .then(async (response) => {
+            // console.log(response.data);
+            setUser(response.data);
             const id = response.data._id;
             x = response.data._id;
           
@@ -171,10 +180,11 @@ const Messenger = () => {
         </div>
         <div className="chatOnline">
           <div className="chatOnlineWrapper">
-            <ChatOnline />
-            <ChatOnline />
-            <ChatOnline />
-            <ChatOnline />
+            <ChatOnline
+              onlineUsers={onlineUsers}
+              currentId={x}
+              setCurrentChat={setCurrentChat}
+            />
           </div>
         </div>
       </div>
